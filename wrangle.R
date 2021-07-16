@@ -12,7 +12,7 @@ parse_valid_vals <- function(v) {
         str_trim()
 
     ## Determine if the keywords specify min: max: intervals
-    map_if( val, ~(grepl("min",.x) || grepl("max",.x)),
+    map_if( val, ~(grepl("^min",.x) || grepl("^max",.x)),
            parse_key_val ) %>% unlist %>% as.list
 }
 
